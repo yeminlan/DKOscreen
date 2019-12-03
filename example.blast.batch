@@ -1,0 +1,21 @@
+#!/bin/bash
+#BSUB -J example.blast
+#BSUB -o log/example.blast.out
+#BSUB -e log/example.blast.error
+#BSUB -q normal
+#BSUB -n 8,32
+#BSUB -M 64400
+
+source activate py27_yl
+
+zcat trim/example.fastq.gz | fastq2fasta.pl - > trim/example.fa
+blastn -num_threads $LSB_DJOB_NUMPROC -query trim/example.fa -task blastn -db raw_data/combinations -out blast/example.txt -outfmt 6 -max_target_seqs 1 -max_hsps 1
+
+source deactivate 
+
+## plot
+Rscript log/blast.plot.R example
+
+## parse for hits with <=2 mismatches
+Rscript log/blast.parse.R example 2
+

@@ -1,0 +1,9 @@
+#!/bin/bash
+#BSUB -J example.trim
+#BSUB -o log/example.trim.out
+#BSUB -e log/example.trim.error
+#BSUB -q normal
+
+source activate py27_yl
+
+cutadapt -g ATCTTGTGGAAAGGACGAAACACCGAATTTCTACTCTTGTAGAT -a AATTTCTACTCTTGTAGATTTTTTTTAAGC -n2 --quiet -o trim/example.fastq.gz raw_data/example.fastq.gz
