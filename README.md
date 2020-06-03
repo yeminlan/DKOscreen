@@ -1,7 +1,7 @@
 # DKOscreen
 Scripts to process sequencing reads for double KO screening experiment
 
-Follow #main.sh# to run the scripts in order. 
+Follow `main.sh` to run the scripts in order. 
 
 The code was tested with the following environment and software:
 - GNU bash, version 4.2.46(2)-release (x86_64-redhat-linux-gnu)
