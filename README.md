@@ -2,7 +2,9 @@
 Scripts to process sequencing reads for double KO screening experiment
 
 # DEMO
-Follow `main.sh` to run the scripts in order. Demo input is stored in the raw_data folder and demo output is stored in the oupput folder.
+Follow `main.sh` to run the scripts in order. 
+Demo input is stored in the raw_data folder and demo output is stored in the oupput folder.
+CPU time of the demo on a normal destop should not exceed 20 minutes. BLAST was the most time-consuming step which could be parallelized. 
 
 # Dependencies
 The code was tested with the following environment and software:
